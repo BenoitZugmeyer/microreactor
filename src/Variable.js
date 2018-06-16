@@ -17,13 +17,15 @@ module.exports = class Variable {
     return this._v
   }
 
-  set(v) {
+  set(v, silent) {
     // if (variableGetEmitter.size) {
     //   throw new Error("Can't set a variable when some observer is running")
     // }
     if (this._v === v) return
     this._v = v
-    this._t = ++timestamp
-    variableSetEmitter.emit(this)
+    if (!silent) {
+      this._t = ++timestamp
+      variableSetEmitter.emit(this)
+    }
   }
 }

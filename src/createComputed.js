@@ -19,7 +19,7 @@ module.exports = function createComputed(fn) {
     ) {
       const { dependencies, result } = runAndObserve(fn)
       resultDependencies = dependencies
-      resultVariable.set(result)
+      resultVariable.set(result, true)
     }
     return resultVariable.get()
   }
