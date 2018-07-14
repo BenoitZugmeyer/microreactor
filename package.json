@@ -3,6 +3,7 @@
   "version": "1.0.0-alpha.0",
   "description": "Minimal implementation of the reactive pattern",
   "main": "src/index.js",
+  "types": "src/index.d.ts",
   "scripts": {
     "test": "jest"
   },
